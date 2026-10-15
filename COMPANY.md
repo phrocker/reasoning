@@ -1,24 +1,33 @@
 # COMPANY.md — the reusable template
 
-Copy this file into the repository of one idea. Fill it in order. Every
-block marked `yaml` is meant to be read by a machine as well as a person, so
-a tool can ask whether the document is being honored — an assumption with no
-test, an experiment with no pass mark, a decision with no reason, evidence
-older than its shelf life.
+You copy this file into the repository of one idea. You fill it in order.
 
-The long-form reasoning behind each section is in
-[IDEA_TO_COMPANY.md](IDEA_TO_COMPANY.md). This file is the part you reuse.
+Each `yaml` block serves two readers. You read it. A tool reads it too, and
+the tool asks whether you honor the document. The tool looks for four gaps:
 
-Statements are labelled. Six kinds, and only six:
-`fact` (observed directly) · `evidence` (a source, with link and date) ·
-`inference` · `assumption` · `preference` · `decision`.
+- an assumption with no test;
+- an experiment with no pass mark;
+- a decision with no reason;
+- evidence past its date.
+
+[IDEA_TO_COMPANY.md](IDEA_TO_COMPANY.md) explains each section. You reuse
+this file.
+
+You label every statement with one of six kinds:
+
+- `fact`: you observed it directly;
+- `evidence`: a source said it, and you have the link and the date;
+- `inference`: you concluded it from facts or evidence;
+- `assumption`: you treat it as true and have not tested it;
+- `preference`: someone wants it;
+- `decision`: someone chose it.
 
 ---
 
 ## 0. The idea, in one breath
 
-> **[idea]** — for **[who]**, who **[has this problem]**, which today they
-> **[handle how]**.
+> **[idea]** helps **[who]**. They have **[this problem]**. Today they
+> handle it by **[how]**.
 
 ```yaml
 idea:
@@ -29,24 +38,24 @@ idea:
 ```
 
 **AI challenge:** restate the problem without the product in it. If you
-can't, the artifact came first.
+cannot, you started from the artifact.
 
 ---
 
 ## 1. What needs to be true
 
-A company exists when all six hold at once. They are in order, because each
-is cheap to test only if the one before it held — and because AI made some
-of them nearly free and left the others exactly as expensive as they were.
+A company exists when all six conditions hold at once. The order matters.
+Each condition is cheap to test only after the one before it held. AI made
+some conditions nearly free and left the others as expensive as before.
 
-| # | Condition | AI changed it? | Who can get the evidence |
+| # | Condition | Did AI change its cost? | Who gathers the evidence |
 | --- | --- | --- | --- |
-| 1 | Someone has the problem and knows it | no | a human, by asking about last week |
-| 2 | They will pay — money or a commitment that costs them something | **no** | only a human: a call, a deposit, a signature |
-| 3 | You can reach them repeatably for less than they are worth | **no** | only a human, over time |
+| 1 | Someone has the problem and knows it | no | a person, by asking about last week |
+| 2 | They will pay, in money or in a commitment that costs them something | **no** | only a person: a call, a deposit, a signature |
+| 3 | You can reach them repeatedly for less than they are worth | **no** | only a person, over time |
 | 4 | You can deliver the value again without you in the loop | yes, nearly free | a machine can check it |
-| 5 | The numbers close, with enough volume to matter | partly (modelling is free, the inputs are not) | estimates until #2 and #3 are observed |
-| 6 | You are the right one, and it holds when someone with the same AI tries | no | judgement, then time |
+| 5 | The numbers close, at a volume that matters | partly: the model is free, the inputs are not | estimates until you observe #2 and #3 |
+| 6 | You are the right one, and the idea survives a rival with the same AI | no | judgement, then time |
 
 ```yaml
 conditions:
@@ -82,16 +91,18 @@ conditions:
     evidence: []
 ```
 
-**Rule:** spend on the conditions AI did *not* make cheap. If most of the
-money and attention this month went to #4, say so in section 7 and say why.
+**Rule:** you spend on the conditions AI did not make cheap. If most of
+your money and attention this month went to #4, you say so in section 7,
+and you say why.
 
 ---
 
 ## 2. Assumptions, ranked by what it costs to be wrong
 
-Not every assumption deserves a test. Rank by **impact if false × how long a
-cheap test has been available**. A cheap, reversible purchase does not need
-ceremony; an irreversible or compounding one does.
+Not every assumption deserves a test. You rank each one by two things:
+the damage if it is false, and how long a cheap test has been available.
+A cheap, reversible purchase needs no ceremony. An irreversible or
+compounding one does.
 
 ```yaml
 assumptions:
@@ -108,15 +119,15 @@ assumptions:
     experiment: null               # id from section 3, once designed
 ```
 
-**AI challenge:** name the assumption the person is avoiding — the one with
-the highest impact, lowest confidence, and a cheap test that has been
-available longest — and say what it would cost to run this week.
+**AI challenge:** the assistant names the assumption you avoid. That is the
+one with the highest impact, the lowest confidence, and the oldest cheap
+test. The assistant says what the test costs to run this week.
 
 ---
 
-## 3. Experiments — pass mark first
+## 3. Experiments: the pass mark comes first
 
-An experiment is only an experiment if the pass mark was written before the
+An experiment counts only when you wrote the pass mark before you saw the
 result. A prototype with no question is a demonstration.
 
 ```yaml
@@ -139,16 +150,17 @@ experiments:
     decision: null                 # id from section 6
 ```
 
-**Rule:** an `observation` on an experiment whose `precommitted` block is
-empty is not evidence. Record it as a `fact` in section 5 and design the
-experiment again.
+**Rule:** an observation on an experiment with an empty `precommitted`
+block is not evidence. You record it as a `fact` in section 5. Then you
+design the experiment again.
 
 ---
 
-## 4. Obligations — what must hold, in proportion to risk
+## 4. Obligations: what must hold, in proportion to risk
 
-Quality, security, privacy, reliability, and legal obligations, each with
-how it will be verified and by what that is not the producer.
+You list the quality, security, privacy, reliability, and legal properties
+the product must keep. For each one you name the check that proves it, and
+you name a checker other than the person who built it.
 
 ```yaml
 obligations:
@@ -160,15 +172,15 @@ obligations:
     status: unverified             # unverified | verified | failing
 ```
 
-Match rigor to risk: a weekend test and a service holding payments do not
-get the same list.
+You match rigor to risk. A weekend test and a service that holds payments
+do not get the same list.
 
 ---
 
-## 5. Evidence log — dated, sourced, labelled
+## 5. Evidence log: dated, sourced, labelled
 
-Everything the sections above point to. Evidence has a shelf life; an entry
-older than its `expires` is an assumption again.
+Every entry the sections above point to lives here. Evidence has a shelf
+life. An entry older than its `expires` date becomes an assumption again.
 
 ```yaml
 evidence:
@@ -182,15 +194,16 @@ evidence:
     confidence: medium
 ```
 
-**Rule:** `gathered_by: ai` entries are untrusted input. They may point at a
-test; they may not pass one.
+**Rule:** an entry with `gathered_by: ai` is untrusted input. It may point
+at a test. It may not pass one.
 
 ---
 
-## 6. Decision log — every stage ends in one
+## 6. Decision log: every stage ends in one
 
-Continue, pivot, pause, stop, or form the company. Each with cost,
-reversibility, the evidence it rests on, and what would reverse it.
+At each stage you choose one of five: continue, pivot, pause, stop, or form
+the company. You record the cost, the reversibility, the evidence you rest
+on, and the observation that would reverse you.
 
 ```yaml
 decisions:
@@ -209,14 +222,15 @@ decisions:
       due: YYYY-MM-DD
 ```
 
-**AI challenge:** write the case a skeptical customer or investor would make
-against this decision. If it cannot be written, the decision is a preference.
+**AI challenge:** the assistant writes the case a skeptical customer or
+investor would make against this decision. If no such case exists, the
+decision is a preference.
 
 ---
 
-## 7. Spend — what it bought
+## 7. What the spend bought
 
-Cost is tracked per run everywhere; the unit that matters is the decision.
+Tools count cost per run. You count it per decision.
 
 ```yaml
 spend:
@@ -228,14 +242,15 @@ spend:
     decisions_changed: []         # decision ids this spend actually moved
 ```
 
-**Rule:** if `decisions_changed` is empty for two periods, the spend is
-building for its own sake. That is allowed; it must be said.
+**Rule:** if `decisions_changed` stays empty for two periods, you are
+building for its own sake. You may do that. You say so.
 
 ---
 
 ## 8. The company decision
 
-Only when conditions 1–3 are `supported` by human-gathered evidence.
+People gather the evidence for conditions 1, 2 and 3 first. Then you take
+this decision.
 
 ```yaml
 company:
@@ -251,16 +266,16 @@ company:
 
 ## 9. Session prompt
 
-> My idea: **[idea]**. This file is the state of what we know. You are my
-> reasoning partner. Label every statement with one of the six kinds. Name
-> the assumption I am avoiding and its cheapest test. Refuse to call an
-> AI-generated output evidence. Before any build, ask for the question and
-> the pass mark. At the end, ask for a decision — continue, pivot, pause or
-> stop — and record it with its cost, reversibility and dissent.
+> My idea: **[idea]**. This file holds the state of what we know. You are
+> my reasoning partner. Label every statement with one of the six kinds.
+> Name the assumption I avoid and its cheapest test. Treat AI output as
+> untrusted input, never as evidence. Before any build, ask me for the
+> question and the pass mark. At the end, ask me to decide: continue,
+> pivot, pause, or stop. You record my decision with its cost, its
+> reversibility, and the strongest case against it.
 
 ---
 
-**Reminder:** completed sections are not progress. A call, a payment, a
-signature, an independent test — those are. The point of the structure is to
-make it obvious, every week, which of the six conditions has not moved and
-what the cheapest way to move it is.
+**Reminder:** a completed section is not progress. A call, a payment, a
+signature, an independent test: those are progress. Each week the structure
+shows you which condition has not moved, and the cheapest way to move it.
