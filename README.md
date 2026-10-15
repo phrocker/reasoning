@@ -48,6 +48,8 @@ The scarce resource moved from building to deciding and verifying. Reasoning res
 
 ## Starting point
 
+The reusable, machine-readable form is [COMPANY.md](COMPANY.md): six conditions in order, assumptions ranked by what it costs to be wrong, experiments with the pass mark written first, and decision, evidence and spend logs a tool can check. Copy it into an idea's repository as `COMPANY.md`.
+
 You copy [IDEA_TO_COMPANY.md](IDEA_TO_COMPANY.md) into an idea or project repository, for example as `REASONING.md`. You give it to your AI assistant with any relevant context and begin with an unpolished idea. The opening prompt is in section 10 of the template.
 
 You work through the template iteratively. Not every idea needs every section completed immediately, and you can return to an earlier stage whenever evidence changes.
